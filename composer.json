@@ -1,0 +1,32 @@
+{
+    "name": "bachphuc/laravel-custom-fields",
+    "description": "custom fields for laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "bachphuc",
+            "email": "trieuquangphuc123@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "bachphuc\\LaravelCustomFields\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "bachphuc\\LaravelCustomFields\\Providers\\CustomFieldsServiceProvider"
+            ],
+            "aliases": {
+                "CustomFields": "bachphuc\\LaravelCustomFields",
+                "CustomField" : "bachphuc\\LaravelCustomFields\\Facades\\CustomFieldFacade"
+            }
+        }
+    },
+    "minimum-stability": "stable"
+}
