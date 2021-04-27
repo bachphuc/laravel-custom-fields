@@ -1,6 +1,6 @@
 <?php
 
-namespace bachphuc\LaravelCustomFields\Trails;
+namespace bachphuc\LaravelCustomFields\Traits;
 
 use bachphuc\LaravelCustomFields\Models\Field;
 

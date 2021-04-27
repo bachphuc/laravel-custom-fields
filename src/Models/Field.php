@@ -16,7 +16,7 @@ class Field extends FieldBase
      * @var array
      */
     protected $fillable = [
-        'user_id', 'field_type', 'title', 'alias', 'category_id', 'category_alias', 'object_type', 'is_disabled', 'options'
+        'user_id', 'field_type', 'title', 'alias', 'category_id', 'category_alias', 'object_type', 'is_disabled', 'options', 'data_type',
     ];
 
     public function user(){
@@ -237,6 +237,14 @@ class Field extends FieldBase
         ];
     }
 
+    public static function supportDataTypes(){
+        return [
+            'text',
+            'number',
+            'color',
+        ];
+    }
+
     public static function getValueFor($item, $field){
         $fieldItem = FieldItem::where('item_type', $item->getType())
         ->where('item_id', $item->getId())
@@ -254,5 +262,11 @@ class Field extends FieldBase
         ->first();
         
         return $fieldItem ? true : false;
+    }
+
+    public function display(){
+        $results = parent::toArray();
+        $results['options'] = $this->getOptions();
+        return $results;
     }
 }

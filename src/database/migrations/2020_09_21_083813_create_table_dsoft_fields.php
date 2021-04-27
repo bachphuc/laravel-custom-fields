@@ -25,6 +25,7 @@ class CreateTableDsoftFields extends Migration
             $table->string('object_type')->nullable();
             $table->tinyInteger('is_disabled')->default(0);
             $table->string('options')->nullable();
+            $table->string('data_type')->nullable();
 
             $table->timestamps();
         });

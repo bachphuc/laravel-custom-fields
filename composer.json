@@ -12,7 +12,10 @@
     "autoload": {
         "psr-4": {
             "bachphuc\\LaravelCustomFields\\": "src/"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "extra": {
         "branch-alias": {

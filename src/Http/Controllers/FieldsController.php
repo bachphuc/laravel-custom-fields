@@ -40,6 +40,12 @@ class FieldsController extends ManageBaseController
                     'data' => Field::supportTypes()
                 ]
             ],
+            'data_type' => [
+                'type' => 'select',
+                'options' => [
+                    'data' => Field::supportDataTypes()
+                ]
+            ],
             'object_type' => [
                 'type' => empty($this->objectType) ? 'text' : 'hidden',
                 'value' => $this->objectType
@@ -58,6 +64,7 @@ class FieldsController extends ManageBaseController
             'title',
             'alias',
             'field_type',
+            'data_type',
             'object_type',
             'options',
             'is_disabled',
